@@ -1,4 +1,3 @@
-//N과 M (5)
 #include <iostream>
 #include <algorithm>
 
