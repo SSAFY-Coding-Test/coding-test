@@ -41,7 +41,7 @@ void plantSeed() {
       ny = y + dy[d];
       if(nx < 0 || nx >= N || ny < 0 || ny >= N)
         continue;
-      if(s.find({nx, ny}) != s.end()) { //꽃이 겹치는 경우 
+      if(s.find({nx, ny}) != s.end()) {  //꽃이 겹치는 경우 
         return;
       }
       s.insert({nx, ny});
