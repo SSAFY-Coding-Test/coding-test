@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+
 using namespace std;
 
 int n, m;                 // n: 숫자의 최대값, m: 출력할 자리수
