@@ -26,7 +26,7 @@ public class Main {
 
         if (map[i][j] == 0) { // 빈 칸인 경우 숫자를 넣어보기
             for (int n = 1; n <= 9; n++) {
-                if (!check_n_isAvail(i, j, n)) { // 숫자가 가능하면 채우기
+                if (check_n_isAvail(i, j, n)) { // 숫자가 가능하면 채우기
                     map[i][j] = n;
                     backtracking(next_i, next_j);
                     map[i][j] = 0; // 백트래킹 (되돌리기)
@@ -42,7 +42,7 @@ public class Main {
     private static boolean check_n_isAvail(int n_i, int n_j, int n) {
         // 가로, 세로 체크
         for (int i = 0; i < 9; i++) {
-            if (map[n_i][i] == n || map[i][n_j] == n) return true;
+            if (map[n_i][i] == n || map[i][n_j] == n) return false;
         }
 
         // 3x3 박스 체크
@@ -50,11 +50,11 @@ public class Main {
         int start_j = (n_j / 3) * 3;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (map[start_i + i][start_j + j] == n) return true;
+                if (map[start_i + i][start_j + j] == n) return false;
             }
         }
 
-        return false;
+        return true;
     }
 
     public static void main(String[] args) throws IOException {
