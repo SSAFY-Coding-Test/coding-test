@@ -4,7 +4,8 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-    private static final int N = 0, S = 1, CLOCK = 1, REVERSE = -1;
+    private static final int N = 0, S = 1;
+    private static final int CLOCK = 1, REVERSE = -1, NO_ROTATION = 0;
     private static int K;
     private static int[] rotateInfo = new int[4];
     private static int[][] wheel = new int[4][8];
@@ -49,7 +50,7 @@ public class Main {
 
     private static void initRotateInfo() {
         for (int i = 0; i < 4; i++) {
-            rotateInfo[i] = 0;
+            rotateInfo[i] = NO_ROTATION;
         }
     }
 
@@ -58,7 +59,6 @@ public class Main {
             if (wheel[left][2] != wheel[left + 1][6]) {
                 rotateInfo[left] = rotateInfo[left + 1] * -1;
             } else {
-                rotateInfo[left] = 0;
                 break;
             }
         }
@@ -69,7 +69,6 @@ public class Main {
             if (wheel[right - 1][2] != wheel[right][6]) {
                 rotateInfo[right] = rotateInfo[right - 1] * -1;
             } else {
-                rotateInfo[right] = 0;
                 break;
             }
         }
