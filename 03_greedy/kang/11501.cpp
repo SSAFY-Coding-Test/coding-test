@@ -6,8 +6,7 @@ int T, N;
 long long answer;
 int price[1000005];
 
-int main() 
-{
+int main() {
     cin.tie(0);
     ios::sync_with_stdio(0);
     cin >> T;
