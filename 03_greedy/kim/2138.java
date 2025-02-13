@@ -6,14 +6,16 @@ public class Main {
     static int N;
     static int[] start;
     static int[] end;
+    static int result = Integer.MAX_VALUE;
 
+    // 전구 on/off 변경
     static void change(int[] state, int i) {
         state[i] ^= 1;
         if (i > 0) state[i - 1] ^= 1;
         if (i < N - 1) state[i + 1] ^= 1;
     }
 
-    static int click(boolean press) {
+    static void click(boolean press) {
         int[] state = start.clone();
         int count = 0;
 
@@ -29,8 +31,14 @@ public class Main {
                 change(state, i);
                 count++;
             }
+            // for문 중단 조건 (count가 더 큰 경우)
+            if(result < count) return;
         }
-        return (state[N - 1] == end[N - 1]) ? count : Integer.MAX_VALUE;
+        // 만들 수 없는 경우
+        if (state[N - 1] != end[N - 1]) return;
+
+        // 만들 수 있는 경우 (result에 저장)
+        result = count;
     }
 
     public static void main(String[] args) throws Exception {
@@ -47,8 +55,11 @@ public class Main {
             end[i] = eLine.charAt(i) - '0';
         }
 
-        // 1번 스위치 X / O
-        int result = Math.min(click(false), click(true));
+        // 첫번째 전구 스위칭 O
+        click(true);
+        // 첫번째 전구 스위칭 X
+        click(false);
+
         System.out.println(result == Integer.MAX_VALUE ? -1 : result);
     }
 }
