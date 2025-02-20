@@ -1,4 +1,4 @@
-# 해쉬쉬
+# 해쉬
 
 ### 사이트 링크
 
@@ -11,7 +11,6 @@
 - [IOIOI(실버 1)](https://www.acmicpc.net/problem/5525)
 - [수들의 합 4(골드 5)](https://www.acmicpc.net/problem/2015)
 - [비슷한 단어(골드 5)](https://www.acmicpc.net/problem/2179)
-- [전구와 스위치(골드 3)](https://www.acmicpc.net/problem/2143)
 
 ### 안내
 
