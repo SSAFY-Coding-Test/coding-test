@@ -20,7 +20,6 @@ int main() {
 		dict[str[i+1]] = i + 1;
 	}
 	
-	
 	for (int i = 0; i < m; i++) {
 		cin >> question;
 		if (question[0] >= 'A' && question[0] <= 'Z') {
