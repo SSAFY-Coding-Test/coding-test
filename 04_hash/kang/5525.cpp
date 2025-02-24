@@ -22,7 +22,6 @@ int main() {
           OICnt--; //이전까지 센 OI 묶음 개수 감소
         }
         i += 2;
-        continue;
       }
     }
     cout << ans << "\n";
