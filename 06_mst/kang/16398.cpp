@@ -55,7 +55,6 @@ int main() {
     }
 
     int edgeSize = edges.size();
-    int a, b;
     for(int i = 0; i < edgeSize; i++) {
         a = edges[i].a;
         b = edges[i].b;
